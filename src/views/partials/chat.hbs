@@ -1,0 +1,24 @@
+    <div class="fixed bottom-10 right-20 w-16 h-16 bg-CH text-white rounded-full flex items-center justify-center cursor-pointer shadow-md z-10"
+        id="chat-circle">
+        <img src="/images/bot.png" class="rounded-full fixed bottom-10 right-20  h-16 w-16" alt="">
+    </div>
+    <div class="fixed bottom-10 right-20 w-[40rem] bg-white rounded-md hidden flex flex-col z-20" id="chat-container">
+        <div class="bg-CH text-white py-2 px-4 rounded-t-md relative">
+            Chat
+            <span class="absolute top-2 right-4 text-lg cursor-pointer" id="close-button">X</span>
+        </div>
+        <div class=" overflow-y-scroll p-4 h-[400px]" id="chat-output">
+            <div class="message bot-message flex">
+                 <img src="/images/Chat/Operadora.jpg" alt="Icono" class="w-[80px] h-[70px] text-white mr-2 rounded-[1rem]" />
+                <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4  bg-CH  rounded-xl  mb-[10px] ">
+                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                        <span class="text-sm font-semibold text-white text-[11px]">Caja Hipodrómo</span>
+                    </div>
+                    <p class="text-sm font-normal py-2.5 text-white text-[11px]">Hola, ¿En qué puedo ayudarte?</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col p-4 h-auto" id="chat-questions">
+            <p class="cursor-pointer text-blue-500" onclick="askQuestion('inicio')">Comenzar</p>
+        </div>
+    </div>

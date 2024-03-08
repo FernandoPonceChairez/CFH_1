@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/tabs.css">
+    <title>Crédito</title>
+</head>
+
+
+<body class="font-Roboto" style="zoom: 0.8;">
+    {{>header}}
+
+    <!--Credito-->
+    <section class="font-Roboto">
+    <div class="flex justify-between">
+        <div>
+            <div class="flex items-center w-56 ml-11 mt-20">
+                <hr class="  flex-1 border-t-2 border-black mr-4">
+                <p class="font-bold">CRÉDITO</p>
+            </div>
+            <div class="pl-12rem mt-5">
+                <h1 class="text-7xl font-bold">Crédito</h1>
+                <p class="w-690px mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe delectus
+                    <br>a deserunt labore aperiam ab! Pariatur blanditiis eaque officia, ipsam nulla exercitationem
+                    iusto cupiditate corporis tempore ipsa? Delectus, perferendis blanditiis!
+                </p>
+                <a href="#openModal"
+                    class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
+                    Solicitar
+                </a>
+            </div>
+        </div>
+
+        <div id="openModal" class="modalDialog">
+            <div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-lg">
+                <a href="#close" title="Close" class="close">X</a>
+                <label for="tipoCredito">Categoría de crédito:</label>
+                <select id="tipoCredito" name="tipoCredito" required>
+                    <option value="" disabled selected>Selecciona razón de crédito</option>
+                    <option value="Consumo">Consumo</option>
+                    <option value="Comercial">Comercial</option>
+                    <option value="Vivienda">Vivienda</option>
+                </select>
+                <br>
+
+                <label for="subTipoCredito">Crédito:</label>
+                <select id="subTipoCredito" name="subTipoCredito" required>
+                    <option value="" disabled selected>Selecciona tipo de crédito</option>
+                </select>
+                <br>
+
+                <!-- Nuevo select para rango de crédito -->
+                <label for="rangoCredito">Rango de crédito:</label>
+                <select id="rangoCredito" name="rangoCredito" required>
+                    <option value="" disabled selected>Selecciona rango de crédito</option>
+                </select>
+                <br>
+
+                <h2>Estimador de crédito</h2>
+                <form id="formularioEstimacion">
+                    <label for="cantidadRequerida">Cantidad requerida:</label>
+                    <input type="range" id="cantidadRequerida" name="cantidadRequerida" min="1000" max="100000" step="1000" required>
+                    <output for="cantidadRequerida" id="valorCantidadRequerida">$1,000</output>
+                    <br>
+
+                    <label for="duracionCredito">Duración de crédito (en meses):</label>
+                    <input type="range" id="duracionCredito" name="duracionCredito" min="12" max="60" step="12" required>
+                    <output for="duracionCredito" id="valorDuracionCredito">12 meses</output>
+                    <br>
+                    <button  id="botonEstimarCredito" class="rounded-md bg-red-700 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-red-800 focus:bg-red-800" type="button">Estimar Préstamo</button>
+
+                    <p id="error" class="text-red-500 font-bold text-lg my-3"></p>
+                </form>
+            </div>
+        </div>
+
+       <div id="openModal2" class="modalDialog">
+            <div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-lg">
+                <a href="#close" title="Close" class="close">X</a>
+                <form id="formularioSolicitudCredito" action="/solicitar" method="post">
+                    <h2>Resultados de la estimación de préstamo</h2>
+                    <p>Cuota mensual: <span id="cuotaMensual"></span></p>
+                    <p>Ahorro necesario: <span id="ahorroNecesario"></span></p>
+                    <button class="rounded-md bg-red-700 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-red-800 foucs:bg-red-800" type="submit">Solicitar crédito</button>
+                    <p id="errorSolicitud" class="text-red-500 font-bold text-lg my-3"></p>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <div class="mt-20 pr-56">
+                <img class="rounded-lg h-96" src="/images/CreditoImg.jpg" alt="main">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--Credito Hipódromo-->
+    <section class=" mt-20 font-Roboto ">
+        <div class="flex justify-center">
+            <div class="flex justify-between ">
+                <div class="bg-CH rounded-md text-white w-606px">
+                    <div class="p-4">
+                        <h1 class="text-3xl font-bold">Creditos Hipódromo</h1>
+                        <p class="mt-5 text-GR font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            varius enim
+                            in
+                            eros elementum tristique.
+                            Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
+                            erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.
+                            Nunc ut sem vitae risus tristique posuere.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-[880px] ml-[90px]">
+                    <div class="tabs">
+                        <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
+                        <label for="tab1" class="tabs__label" class="font-bold">Automovil</label>
+                        <div class="tabs__content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
+                            elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+                            commodo diam libero vitae erat.
+
+                            Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+                            tristique posuere.
+                        </div>
+                        <input type="radio" class="tabs__radio" name="tabs-example" id="tab2">
+                        <label for="tab2" class="tabs__label" class="font-bold">Terreno</label>
+                        <div class="tabs__content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ad libero optio rem error
+                            omnis? Doloremque accusantium, asperiores est ad qui itaque vero voluptates consequuntur
+                            esse molestias enim dicta odit!
+                        </div>
+                        <input type="radio" class="tabs__radio" name="tabs-example" id="tab3">
+                        <label for="tab3" class="tabs__label" class="font-bold">Construye</label>
+                        <div class="tabs__content">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi quidem suscipit dolor
+                            voluptate possimus neque obcaecati omnis veritatis quibusdam officiis, labore aut id ea
+                            deleniti expedita voluptatibus et sint ex.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios-->
+    <section class="mt-20">
+        <div class="flex justify-center mb-[30px]">
+            <h1 class="text-5xl font-bold">Beneficios de Creditos</h1>
+        </div>
+
+        <div class="flex text-center justify-center space-x-80 font-bold">
+            <div >
+                <img class="mb-3" src="/images/icons/CAT.png" alt="">
+                <p>CAT</p>
+                <P>25%</P>
+            </div>
+            <div>
+                <img class="mb-3" src="/images/icons/Montos.png" alt="">
+                <p>Montos</p>
+                <p>Hasta $100,000</p>
+            </div>
+            <div>
+                <img class="ml-4 mb-3" src="/images/icons/Facilidad.png" alt="">
+                <p>Facilidad</p>
+                <p>Aprobados en 24hr</p>
+            </div>
+            <div>
+                <img class="mb-3" src="/images/icons/Plazos.png" alt="">
+                <p>Plazos</p>
+                <p>Hasta 72 meses</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-CH mt-20">
+        <div class="flex justify-center">
+            <h1 class="text-4xl text-white mt-5 font-bold">Tipos de Credito</h1>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 justify-center items-center mr-[100px] ml-[100px] ">
+            <!-- Elemento 1 -->
+            <div class="p-4 flex items-center">
+                <div class=" w-[100px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save1.png" alt="Icono 1">
+                </div>
+                <div>
+                    <a href="/pyme" class="text-xl text-white font-semibold">Activos PYME Hipódromo</a>
+                    <p class="text-GR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error suscipit
+                        possimus facilis porro ipsa vel expedita harum pariatur illo. Veritatis suscipit cumque voluptas
+                        ratione atque, neque nemo animi possimus beatae.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 2 -->
+            <div class="p-4 flex items-center">
+                <div class=" w-[40px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save2.png" alt="Icono 2">
+                </div>
+                <div>
+
+                    <a href="/comercialpyme" class="text-xl text-white font-semibold">Comercial PYME Hipódromo</a>
+                    <p class="text-GR ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                        enim in eros.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 3 -->
+            <div class="p-4 flex items-center">
+                <div class="w-[100px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save2.png" alt="Icono 2">
+                </div>
+                <div>
+                    <a href="/terrenohip" class="text-xl text-white font-semibold">Terreno Hipódromo</a>
+                    <p class="text-GR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error suscipit
+                        possimus facilis porro ipsa vel expedita harum pariatur illo. Veritatis suscipit cumque voluptas
+                        ratione atque, neque nemo animi possimus beatae.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 4 -->
+            <div class="p-4 flex items-center">
+                <div class=" w-[40px] mr-4 mb-[35px]">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save1.png" alt="Icono 1">
+                </div>
+                <div>
+                    <a href="/remodelahip" class="text-xl text-white font-semibold">Remodela Hipódromo</a>
+                    <p class="text-GR ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                        enim in eros.</p>
+                </div>
+            </div>
+            <!-- Elemento 5 -->
+            <div class="p-4 flex items-center mb-[35px]">
+                <div class=" w-[100px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save2.png" alt="Icono 2">
+                </div>
+                <div>
+                    <a href="/hipoteca" class="text-xl text-white font-semibold">Hipoteca Hipódromo</a>
+                    <p class="text-GR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error suscipit
+                        possimus facilis porro ipsa vel expedita harum pariatur illo. Veritatis suscipit cumque voluptas
+                        ratione atque, neque nemo animi possimus beatae.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 6-->
+            <div class="p-4 flex items-center mb-[35px]">
+                <div class=" w-[40px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save1.png" alt="Icono 1">
+                </div>
+                <div>
+                    <a href="/construyehip" class="text-xl text-white font-semibold">Construye Hipódromo</a>
+                    <p class="text-GR ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                        enim in eros.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 7 -->
+            <div class="p-4 flex items-center">
+                <div class=" w-[100px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save1.png" alt="Icono 1">
+                </div>
+                <div>
+                    <a href="/refaccionhip" class="text-xl text-white font-semibold">Refaccionario Hipódromo</a>
+                    <p class="text-GR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error suscipit
+                        possimus facilis porro ipsa vel expedita harum pariatur illo. Veritatis suscipit cumque voluptas
+                        ratione atque, neque nemo animi possimus beatae.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 8 -->
+            <div class="p-4 flex items-center">
+                <div class=" w-[40px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save2.png" alt="Icono 2">
+                </div>
+                <div>
+
+                    <a href="/aviohip" class="text-xl text-white font-semibold">Avío Hipódromo</a>
+                    <p class="text-GR ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                        enim in eros.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 9 -->
+            <div class="p-4 flex items-center">
+                <div class="w-[100px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save2.png" alt="Icono 2">
+                </div>
+                <div>
+                    <a href="/triplehip" class="text-xl text-white font-semibold">Triple Hipódromo</a>
+                    <p class="text-GR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error suscipit
+                        possimus facilis porro ipsa vel expedita harum pariatur illo. Veritatis suscipit cumque voluptas
+                        ratione atque, neque nemo animi possimus beatae.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 10 -->
+            <div class="p-4 flex items-center">
+                <div class=" w-[40px] mr-4 mb-[35px]">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save1.png" alt="Icono 1">
+                </div>
+                <div>
+                    <a href="/maxhip" class="text-xl text-white font-semibold">MaxHipódromo</a>
+                    <p class="text-GR ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                        enim in eros.</p>
+                </div>
+            </div>
+            <!-- Elemento 11 -->
+            <div class="p-4 flex items-center mb-[35px]">
+                <div class=" w-[100px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save2.png" alt="Icono 2">
+                </div>
+                <div>
+                    <a href="/promohip" class="text-xl text-white font-semibold">Promo Plus Hipódromo</a>
+                    <p class="text-GR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error suscipit
+                        possimus facilis porro ipsa vel expedita harum pariatur illo. Veritatis suscipit cumque voluptas
+                        ratione atque, neque nemo animi possimus beatae.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 12-->
+            <div class="p-4 flex items-center mb-[35px]">
+                <div class=" w-[40px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save1.png" alt="Icono 1">
+                </div>
+                <div>
+                    <a href="/autohip" class="text-xl text-white font-semibold">AutoHipódromo</a>
+                    <p class="text-GR ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                        enim in eros.</p>
+                </div>
+            </div>
+            <!-- Elemento 13 -->
+            <div class="p-4 flex items-center mb-[35px]">
+                <div class=" w-[40px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save1.png" alt="Icono 1">
+                </div>
+                <div>
+                    <a href="/creditoesp" class="text-xl text-white font-semibold">Crédito Especial</a>
+                    <p class="text-GR ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                        enim in eros.</p>
+                </div>
+            </div>
+
+
+            <!-- Elemento 14 -->
+            <div class="p-4 flex items-center mb-[35px]">
+                <div class=" w-[100px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save2.png" alt="Icono 2">
+                </div>
+                <div>
+                    <a href="/credihip" class="text-xl text-white font-semibold">Credicrece Hipodromo</a>
+                    <p class="text-GR">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error suscipit
+                        possimus facilis porro ipsa vel expedita harum pariatur illo. Veritatis suscipit cumque voluptas
+                        ratione atque, neque nemo animi possimus beatae.</p>
+                </div>
+            </div>
+
+            <!-- Elemento 15-->
+            <div class="p-4 flex items-center mb-[35px]">
+                <div class=" w-[40px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save1.png" alt="Icono 1">
+                </div>
+                <div>
+                    <a href="/automaticohip" class="text-xl text-white font-semibold">Automático Hipodromo</a>
+                    <p class="text-GR ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                        enim in eros.</p>
+                </div>
+            </div>
+            <!-- Elemento 16 -->
+            <div class="p-4 flex items-center mb-[35px]">
+                <div class=" w-[40px] mr-4">
+                    <!-- Espacio para el icono (reemplaza con tu imagen) -->
+                    <img src="/images/Ahorro/Iconos/Save1.png" alt="Icono 1">
+                </div>
+                <div>
+                    <a href="/preautohip" class="text-xl text-white font-semibold">Preautorizado Hipódromo</a>
+                    <p class="text-GR ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                        enim in eros.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!--Crédito para cada ocasión
+    <section class="font-Roboto bg-CH mt-[50px]">
+
+        <div class="flex justify-center mb-14">
+            <h1 class="text-white text-3xl mt-7">Un credito para cada ocasión</h1>
+        </div>
+
+        <div class="flex justify-center space-x-10">
+            <div class="pl-10">
+                <img class="mb-3 rounded-lg" src="/images/ConstruyeHogar.jpg" alt="">
+                <p class="text-white">Construye tu hogar</p>
+                <P class="text-GR">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
+                    eros.</P>
+            </div>
+            <div>
+                <img class="mb-3 rounded-lg" src="/images/ConsigueAuto.jpg" alt="">
+                <p class="text-white">Consigue un auto</p>
+                <P class="text-GR">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
+                    eros.</P>
+            </div>
+            <div>
+                <img class="mb-3 rounded-lg" src="/images/AquiereTerreno.png" alt="">
+                <p class="text-white">Adquiere tu terreno</p>
+                <P class="text-GR">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
+                    eros.</P>
+            </div>
+            <div class="pr-10">
+                <img class="mb-3 rounded-lg" src="/images/AbreNegocio.jpg" alt="">
+                <p class="text-white">Crea tu negocio</p>
+                <P class="text-GR mb-28">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                    enim in
+                    eros.</P>
+            </div>
+        </div>
+
+
+    </section>
+    -->
+    <section class="mt-20">
+        <div class="flex  justify-center mb-20  ">
+            <div class="bg-white rounded-lg shadow-md p-8  bg-cover w-1230px h-384px text-center text-white items-center"
+                style="background-image: url('/images/Socios.jpg');">
+
+                <p class="text-5xl mt-5">¿Qué esperas? <br>Conviertete en socio Caja <br>Hipódromo</p>
+                <button class="bg-CH hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
+                    Más información
+                </button>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    {{>footer}}
+
+    <!--Test-->
+    <script>
+const tipoCredito = document.getElementById('tipoCredito');
+const subTipoCredito = document.getElementById('subTipoCredito');
+const cantidadRequerida = document.getElementById('cantidadRequerida');
+const valorCantidadRequerida = document.getElementById('valorCantidadRequerida');
+const duracionCredito = document.getElementById('duracionCredito');
+const valorDuracionCredito = document.getElementById('valorDuracionCredito');
+const botonEstimarCredito = document.getElementById('botonEstimarCredito');
+const formularioSolicitudCredito = document.getElementById('formularioSolicitudCredito');
+const cuotaMensual = document.getElementById('cuotaMensual');
+const ahorroNecesario = document.getElementById('ahorroNecesario');
+
+// Array que contiene los tipos de crédito y sus subtipos correspondientes
+const tiposCredito = {
+    'Consumo': ['Tipo 1', 'Tipo 2', 'Tipo 3'],
+    'Comercial': ['Tipo 4', 'Tipo 5', 'Tipo 6'],
+    'Vivienda': ['Tipo 7', 'Tipo 8', 'Tipo 9']
+};
+
+// Array que contiene los subtipos de crédito con sus respectivos valores mínimos y máximos
+const subTiposCredito = {
+    Consumo: {
+        "Automatico Hipódromo": { minAmount: 20000, maxAmount: 2000000, minMonths: 2, maxMonths: 60 },
+        "Credicrece Hipódromo": { minAmount: 30000, maxAmount: 4000000, minMonths: 2, maxMonths: 48 },
+        "Preautorizado Hipódromo": { minAmount: 40000, maxAmount: 5000000, minMonths: 2, maxMonths: 24 },
+        "Promo Plus Hipódromo": { minAmount: 40000, maxAmount: 5000000, minMonths: 2, maxMonths: 24 },
+        "Autohipódromo" : { minAmount: 40000, maxAmount: 5000000, minMonths: 2, maxMonths: 24 },
+        "Triple Hipódromo": { minAmount: 40000, maxAmount: 5000000, minMonths: 2, maxMonths: 24 },
+        "Maxhipódromo": { minAmount: 40000, maxAmount: 5000000, minMonths: 2, maxMonths: 24 }
+    },
+    Comercial: {
+        "Avío Hipódromo": { minAmount: 10000, maxAmount: 1000000, minMonths: 2, maxMonths: 60 },
+        "Refaccionario Hipódromo": { minAmount: 20000, maxAmount: 600000, minMonths: 2, maxMonths: 48 },
+        "Comercial Pyme Hipódromo": { minAmount: 30000, maxAmount: 700000, minMonths: 2, maxMonths: 24 },
+        "Activos Pyme Hipódromo": { minAmount: 40000, maxAmount: 5000000, minMonths: 2, maxMonths: 24 }
+    },
+    Vivienda: {
+        "Hipoteca Hipódromo": { minAmount: 20000, maxAmount: 2000000, minMonths: 2, maxMonths: 60 },
+        "Construye Hipodromo": { minAmount: 50000, maxAmount: 3000000, minMonths: 2, maxMonths: 60 },
+        "Remodela Hipódromo": { minAmount: 10000, maxAmount: 4000000, minMonths: 2, maxMonths: 60 },
+        "Terreno Hipódromo": { minAmount: 40000, maxAmount: 5000000, minMonths: 2, maxMonths: 24 }
+    }
+};
+
+// Event listener para actualizar la cantidad de crédito mostrada
+cantidadRequerida.addEventListener('input', () => {
+    valorCantidadRequerida.textContent = `$${cantidadRequerida.value}`;
+});
+
+// Event listener para actualizar la duración del crédito mostrada
+duracionCredito.addEventListener('input', () => {
+    valorDuracionCredito.textContent = `${duracionCredito.value} meses`;
+});
+
+// Event listener para seleccionar el tipo de crédito y cargar sus subtipos correspondientes
+tipoCredito.addEventListener('change', () => {
+    const tipoSeleccionado = tipoCredito.value;
+    const subTipos = subTiposCredito[tipoSeleccionado] || {};
+
+    // Limpiar las opciones anteriores
+    subTipoCredito.innerHTML = '<option value="" disabled selected>Selecciona tipo de crédito</option>';
+
+    // Populate the subTipoCredito with options based on the selected loan type
+    for (const subTipo in subTipos) {
+        const option = document.createElement('option');
+        option.value = subTipo;
+        option.textContent = subTipo;
+        subTipoCredito.appendChild(option);
+    }
+});
+
+// Event listener para actualizar los valores de préstamo y duración según el subtipo seleccionado
+subTipoCredito.addEventListener('change', () => {
+    const tipoSeleccionado = tipoCredito.value;
+    const subTipoSeleccionado = subTipoCredito.value;
+    const datosSubTipo = subTiposCredito[tipoSeleccionado][subTipoSeleccionado];
+
+    // Actualizar los rangos de préstamo y duración del préstamo según el subtipo seleccionado
+    cantidadRequerida.min = datosSubTipo.minAmount;
+    cantidadRequerida.max = datosSubTipo.maxAmount;
+    duracionCredito.min = datosSubTipo.minMonths;
+    duracionCredito.max = datosSubTipo.maxMonths;
+
+    // Mostrar los valores mínimos de préstamo y duración del préstamo
+    valorCantidadRequerida.textContent = `$${datosSubTipo.minAmount}`;
+    valorDuracionCredito.textContent = `${datosSubTipo.minMonths} meses`;
+});
+
+// Event listener para calcular el préstamo estimado cuando se hace clic en el botón
+// Event listener para calcular el préstamo estimado cuando se hace clic en el botón
+botonEstimarCredito.addEventListener('click', () => {
+    // Recopilar los datos de entrada
+    const tipoCreditoSeleccionado = tipoCredito.value;
+    const subTipoCreditoSeleccionado = subTipoCredito.value;
+    const cantidadRequeridaSeleccionada = cantidadRequerida.value;
+    const duracionCreditoSeleccionada = duracionCredito.value;
+
+    // Validar los datos de entrada
+    if (tipoCreditoSeleccionado === '' || subTipoCreditoSeleccionado === '' || cantidadRequeridaSeleccionada === '' || duracionCreditoSeleccionada === '') {
+        document.getElementById('error').textContent = 'Por favor, completa todos los campos.';
+        return;
+    }
+
+    // Calcular los resultados del préstamo
+    const tasaInteresPorcentaje = 13; // Porcentaje de interés fijo
+    const tasaInteres = tasaInteresPorcentaje / 100;
+    const interesTotal = cantidadRequeridaSeleccionada * tasaInteres * duracionCreditoSeleccionada / 12;
+    const totalPagar = parseFloat(cantidadRequeridaSeleccionada) + interesTotal;
+    const cuotaMensual = totalPagar / duracionCreditoSeleccionada;
+
+    // Abrir el Modal 2
+    location.href = "#openModal2";
+
+    // Mostrar los resultados en el Modal 2
+    document.getElementById('totalInteres').textContent = `$${interesTotal.toFixed(2)}`;
+    document.getElementById('totalPagar').textContent = `$${totalPagar.toFixed(2)}`;
+    document.getElementById('cuotaMensual').textContent = `$${cuotaMensual.toFixed(2)}`;
+    document.getElementById('duracionDelCredito').textContent = `${duracionCreditoSeleccionada} meses`;
+
+    
+    const cuotaMensualValue = totalPagar / duracionCreditoSeleccionada;
+    cuotaMensual.textContent = `$${cuotaMensualValue.toFixed(2)}`;
+    
+    // Calcular y mostrar el ahorro necesario en el Modal 2 (10% del crédito solicitado)
+    const ahorroNecesarioValue = cantidadRequeridaSeleccionada * 0.1;
+    ahorroNecesario.textContent = `$${ahorroNecesarioValue.toFixed(2)}`;
+});
+
+const rangoCredito = document.getElementById('rangoCredito');
+
+// Esta función actualiza los rangos de crédito disponibles en función del subtipo de crédito seleccionado
+function actualizarRangosDeCredito(minAmount, maxAmount) {
+    // Supongamos que quieres dividir los rangos de la siguiente manera: 
+    // 1000 a 9999, 10000 a 49999, 50000 a 99999, 100000 a 5000000
+    // Primero, limpia las opciones actuales
+    rangoCredito.innerHTML = '<option value="" disabled selected>Selecciona rango de crédito</option>';
+
+    // Aquí definirías tus rangos basados en minAmount y maxAmount
+    const rangos = [
+        { min: 1000, max: 9999 },
+        { min: 10000, max: 49999 },
+        { min: 50000, max: 99999 },
+        { min: 100000, max: 5000000 }
+    ];
+
+    // Filtra los rangos que se ajustan a los límites del crédito seleccionado
+    rangos.filter(rango => rango.min >= minAmount && rango.max <= maxAmount).forEach(rango => {
+        const option = document.createElement('option');
+        option.value = `${rango.min}-${rango.max}`;
+        option.textContent = `$${rango.min.toLocaleString()} - $${rango.max.toLocaleString()}`;
+        rangoCredito.appendChild(option);
+    });
+}
+
+// Modifica el event listener para 'subTipoCredito' para incluir la actualización de rangos de crédito
+subTipoCredito.addEventListener('change', () => {
+    const tipoSeleccionado = tipoCredito.value;
+    const subTipoSeleccionado = subTipoCredito.value;
+    const datosSubTipo = subTiposCredito[tipoSeleccionado][subTipoSeleccionado];
+
+    // Actualizar los rangos de préstamo y duración del préstamo según el subtipo seleccionado
+    cantidadRequerida.min = datosSubTipo.minAmount;
+    cantidadRequerida.max = datosSubTipo.maxAmount;
+    duracionCredito.min = datosSubTipo.minMonths;
+    duracionCredito.max = datosSubTipo.maxMonths;
+
+    // Mostrar los valores mínimos de préstamo y duración del préstamo
+    valorCantidadRequerida.textContent = `$${datosSubTipo.minAmount}`;
+    valorDuracionCredito.textContent = `${datosSubTipo.minMonths} meses`;
+
+    // Llama a la función para actualizar los rangos de crédito basados en los límites del subtipo seleccionado
+    actualizarRangosDeCredito(datosSubTipo.minAmount, datosSubTipo.maxAmount);
+
+    // Calcular y mostrar el ahorro necesario (10% del crédito solicitado)
+    const ahorroNecesarioCalculado = parseFloat(cantidadRequerida.value) * 0.1;
+    ahorroNecesario.textContent = `$${ahorroNecesarioCalculado.toFixed(2)}`;
+});
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cónocenos</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body style="zoom: 0.8;">
+    {{>header}}
+    <!--Acerca de nosotros-->
+    <section class="font-Roboto h-[500px]">
+        <div class="flex justify-between">
+            <div>
+                <div class="flex items-center w-56 ml-11 mt-20">
+                    <hr class=" flex-1 border-t-2 border-black mr-4">
+                    <p class="font-bold">ACERCA DE NOSOTROS</p>
+                </div>
+                <div class=" pl-24 mt-5 flex">
+                    <h1 class="text-5xl flex-1 font-bold">En la Caja Hipódromo creemos en la importancia del ahorro y en la
+                        necesidad de estar preparados para afrontar cualquier situación imprevista.</h1>
+                    <div>
+                        <h3 class="w-[690px] text-lg mr-3 font-bold">Aenean faucibus nibh et justo cursus id rutrum lorem
+                            imperdiet. Nunc ut sem vitae risus tristique posuere.</h3>
+                        <p class="w-[690px] mt-5 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                            delectus
+                            a deserunt labore aperiam ab! Pariatur blanditiis eaque officia, ipsam nulla exercitationem
+                            iusto cupiditate corporis tempore ipsa? Delectus,perferendis blanditiis!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <!--Acerca de nosotros parte de abajo-->
+    <section class="bg-CH font-Roboto h-[800px]">
+        <div class="flex justify-evenly">
+            <div class="text-white w-[500px] mt-96">
+                <h1 class="font-bold">NUESTRA MISIÓN</h1>
+                <h2 class="font-bold">Ofrecer a los clientes opciones de ahorro flexibles, para que puedan alcanzar sus metas financieras
+                    a largo plazo.</h2>
+                <p class="text-GR">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dolores
+                    numquam odio aperiam magni totam aspernatur quam vel facilis repellat adipisci consectetur commodi
+                    dignissimos, soluta deserunt neque quibusdam nesciunt facere.</p>
+            </div>
+
+            <div class="text-white w-[500px] mt-96">
+                <h1 class="font-bold">NUESTRA VISIÓN</h1>
+                <h2 class="font-bold">Ofrecer a los clientes opciones de ahorro flexibles, para que puedan alcanzar sus metas financieras
+                    a largo plazo.</h2>
+                <p class="text-GR font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dolores
+                    numquam odio aperiam magni totam aspernatur quam vel facilis repellat adipisci consectetur commodi
+                    dignissimos, soluta deserunt neque quibusdam nesciunt facere.</p>
+            </div>
+
+        </div>
+      <div class="flex flex-col  ml-[5.75rem] mt-20">
+            <p class="font-bold text-white">COMPAÑIAS QUE NOS APOYAN</p>
+            <img class="p-[10px] w-[1600px]" src="/images/Logo row.png" alt="">
+        </div>
+    </section>
+
+    <img class="absolute top-1/2 translate-y-[-10%] left-1/2 -translate-x-1/2 w-[1400px] " src="/images/Nosotros.png"
+        alt="Nosotros">
+
+    <!--Nuestro recorrido-->
+    <section class="flex justify-center items-center font-Roboto mt-5">
+
+        <div class="w-[1280px] h-[576px] border bg-CH flex  justify-center items-center rounded-lg">
+            <div class="p-8">
+                <h2 class="text-white pb-[10px] uppercase tracking-widest font-bold">NUESTRO RECORRIDO</h2>
+                <h1 class="text-white text-5xl font-bold">¿Cómo obtuvimos ... de usuarios?</h1>
+                <p class="text-GR pb-[10px] font-normal"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae veniam enim
+                    earum
+                    molestias quod
+                    voluptatem, quia quaerat itaque repellat vero facilis eum, ipsam quam modi autem deserunt porro
+                    exercitationem fugit.</p>
+
+                <div class="flex flex-row space-x-5">
+                    <div class="flex flex-col mr-4">
+                        <dt class="mb-2 text-3xl font-extrabold text-white">34M+</dt>
+                        <dd class="text-GR font-normal">De pesos ahorrados</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="mb-2 text-3xl font-extrabold text-white">400+</dt>
+                        <dd class="text-GR font-normal">De usuarios activos</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="mb-2 text-3xl font-extrabold text-white">40K+</dt>
+                        <dd class="text-GR font-normal">De familias apoyadas</dd>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-8">
+                <img class="w-[1800px]" src="/images/Usuarios.png" alt="Usuarios">
+            </div>
+        </div>
+  
+
+    </section>
+
+    <section class="mt-20 font-Roboto">
+        <div class="flex  justify-center mb-20  ">
+            <div class="bg-white rounded-lg shadow-md p-8  bg-cover w-1230px h-384px text-center text-white items-center"
+                style="background-image: url('/images/Socios.jpg');">
+
+                <p class="text-5xl mt-5">¿Qué esperas? <br>Conviertete en socio Caja <br>Hipódromo</p>
+                <button class="bg-CH hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
+                    Más información
+                </button>
+            </div>
+        </div>
+    </section>
+
+    {{>footer}}
+    
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    const role1 localStorage.getItem('role1');
+    const role2 localStorage.getItem('role2');
+    const role3 localStorage.getItem('role3');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+
+<body>
+
+  <header class="h-28 bg-CH font-Roboto ">
+    <div class="flex justify-between ">
+      <div class=" w-28 h-24 pl-5 pt-2 ">
+        <img class="" src="/images/LOGO.png" alt="Logo">
+      </div>
+      <div class="flex space-x-10 pr-2">
+        <button id="ibtn" class="bg-CH hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">Inicio</button>
+        <button id="cncbtn" class="bg-CH hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">Cónocenos</button>
+        <button id="ahorrobtn" class="bg-CH hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">Ahorro</button>
+        <button id="rbtn" class="bg-CH hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">Crédito</button>
+        <button id="sbtn" class="bg-CH hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">Beneficios</button>
+        <button id="astbtn" class="bg-CH hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">Asóciate</button>
+        <button id="hipbtn" class="bg-CH hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">HipodroMóvil</button>
+      </div>
+      <div class="mt-4 space-x-5 pr-5">
+        <!-- <button class="bg-white text-black font-bold py-2 px-4 rounded mt-4">Inicia sesión</button> -->
+        {{#if role1 }}
+        <div class="space-x-5 mt-4">
+          
+          <a class="bg-white text-black font-bold py-2 px-4 rounded">Admin</a>
+          <a href="/tabla" class="bg-white text-black font-bold py-2 px-4 rounded">PROFILES</a>
+          <a href="/logout"
+            class="bg-white text-black font-bold py-2 px-4 rounded">Logout</a>
+        </div>
+        {{else}}
+        {{#if role2 }}
+        <div class="space-x-5 mt-4">
+          <a href="/credito"
+            class="bg-white text-black font-bold py-2 px-4 rounded">Credito</a>
+          <a href="/logout"
+            class="bg-white text-black font-bold py-2 px-4 rounded">Logout</a>
+        </div>
+        {{else}}
+        {{#if role3 }}
+        <div class="space-x-5 mt-4">
+
+          <a class="bg-white text-black font-bold py-2 px-4 rounded">Support</a>
+
+          <a href="/logout"
+            class="bg-white text-black font-bold py-2 px-4 rounded">Logout</a>
+        </div>
+        {{else}}
+        <div class="space-x-5">
+          <button id="loginbtn" class="bg-white text-black font-bold py-2 px-4 rounded mt-4">Iniciar Sesión</button>
+
+          <button id="regisbtn" class="bg-white text-black font-bold py-2 px-4 rounded mt-4">Registrate</button>
+
+        </div>
+        {{/if}}
+        {{/if}}
+        {{/if}}
+      </div>
+    </div>
+  </header>
+
+
+{{!-- Chat Test --}}
+
+    <div class="fixed bottom-10 right-20 w-16 h-16 bg-CH text-white rounded-full flex items-center justify-center cursor-pointer shadow-md z-10"
+        id="chat-circle">
+        <img src="/images/bot.png" class="rounded-full fixed bottom-10 right-20  h-16 w-16" alt="">
+    </div>
+    <div class="fixed bottom-10 right-20 w-[40rem] bg-white rounded-md hidden flex flex-col z-20" id="chat-container">
+        <div class="bg-CH text-white py-2 px-4 rounded-t-md relative">
+            Chat
+            <span class="absolute top-2 right-4 text-lg cursor-pointer" id="close-button">X</span>
+        </div>
+        <div class=" overflow-y-scroll p-4 h-[400px]" id="chat-output">
+            <div class="message bot-message flex">
+                 <img src="/images/Chat/Operadora.jpg" alt="Icono" class="w-[80px] h-[70px] text-white mr-2 rounded-full" />
+                <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4  bg-CH  rounded-xl  mb-[10px] ">
+                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                        <span class="text-sm font-semibold text-white text-[11px]">Caja Hipodrómo</span>
+                    </div>
+                    <p class="text-sm font-normal py-2.5 text-white text-[11px]">Hola, ¿En qué puedo ayudarte?</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col p-4 h-auto" id="chat-questions">
+            <p class="cursor-pointer text-blue-500" onclick="askQuestion('inicio')">Comenzar</p>
+        </div>
+    </div>
+
+
+  <script src="/js/chat.js"></script>
+  <script src="/js/redireccionamiento.js"></script>
+</body>
+
+</html>
